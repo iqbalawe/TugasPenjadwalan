@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author iqbal
  */
-public class Util {
+public class Util { //Utility untuk setting tanggal, bulan, tahun berdasarkan kalender
     public static boolean dateRanger(Date start, Date end) {
         Date startTemp = new Date(start.getYear(), start.getMonth(), start.getDay());
         Date endTemp = new Date(end.getYear(), end.getMonth(), end.getDay());
