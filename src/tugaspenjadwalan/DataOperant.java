@@ -21,29 +21,19 @@ public class DataOperant {
         Collections.sort(datas);
         for(Perjanjianku Perjanjianku: datas) {
             System.out.println();
-            System.out.println(
-                    "ID: " + Perjanjianku.getId() +
-                    "\nKegiatan : "+Perjanjianku.getKegiatan()+
-                    "\nDilaksanakan pada tanggal : "+Perjanjianku.getTanggal()+
-                    "-"+Perjanjianku.getBulan()+"-"+Perjanjianku.getTahun());
+            show(Perjanjianku);
             System.out.println();
         }
     }
     
     public void findById(int id) { //Mencari Berdasarkan ID
-        int i = 0;
         for(Perjanjianku Perjanjianku: datas) {
-            if(datas.get(i).getId() == id) {
+            if(Perjanjianku.getId() == id) {
                 System.out.println();
-                System.out.println(
-                        "ID: " + datas.get(i).getId() +
-                        "\nKegiatan : "+Perjanjianku.getKegiatan()+
-                    "\nDilaksanakan pada tanggal : "+Perjanjianku.getTanggal()+
-                    "-"+Perjanjianku.getBulan()+"-"+Perjanjianku.getTahun());
-            System.out.println();
-            break;
+                show(Perjanjianku);
+                System.out.println();
+                break;
             }
-            i++;
         }
     }
     
@@ -51,7 +41,7 @@ public class DataOperant {
         int i = 0;
         for(Perjanjianku Perjanjianku: datas) {
             if(datas.get(i).getId() == id) {
-                datas.remove(id);
+                datas.remove(i);
                 break;
             }
             i++;
@@ -71,6 +61,60 @@ public class DataOperant {
             }
             i++;
         }
+    }
+    
+    public void search(String start, String end) {
+        Collections.sort(datas);
+        for (Perjanjianku p: datas) {
+            int inDb = p.getBulan() + p.getTanggal();
+            
+            int startMonth = Integer.valueOf(start.split("-")[0]);
+            int startDate = Integer.valueOf(start.split("-")[1]);
+            
+            int endMonth = Integer.valueOf(end.split("-")[0]);
+            int endDate = Integer.valueOf(end.split("-")[1]);
+            
+            int oStart = startMonth+startDate; //override
+            int oEnd = endMonth+endDate; //overidde
+            
+            if (inDb == oStart) {
+                show(p);
+            } else if (inDb == oEnd) {
+                show(p);
+            } else {
+                if (oStart > inDb || oEnd < inDb) {
+                    show(p);
+                }
+            }
+        }
+    }
+    
+    public void searchByMonth(int start, int end) {
+        Collections.sort(datas);
+        for (Perjanjianku p: datas) {
+            int inDb = p.getBulan();
+            
+            if (inDb == start) {
+                show(p);
+                continue;
+            } else if (inDb == end) {
+                show(p);
+                continue;
+            }
+            
+            if (start > inDb || inDb < end) {
+                show(p);
+            }
+        }
+    }
+    
+    private void show(Perjanjianku p) {
+        System.out.println(
+                "ID: " + p.getId() +
+                "\nKegiatan : "+p.getKegiatan()+
+                "\nDilaksanakan pada tanggal : "+p.getTanggal()+
+                "-"+p.getBulan()+"-"+p.getTahun()
+        );
     }
     
 }
