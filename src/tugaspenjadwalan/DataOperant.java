@@ -1,3 +1,5 @@
+//Bagian ini Iqbal yang jelasin
+
 package tugaspenjadwalan;
 
 import java.util.ArrayList;
@@ -23,17 +25,6 @@ public class DataOperant {
             System.out.println();
             show(Perjanjianku);
             System.out.println();
-        }
-    }
-    
-    public void findById(int id) { //Mencari Berdasarkan ID
-        for(Perjanjianku Perjanjianku: datas) {
-            if(Perjanjianku.getId() == id) {
-                System.out.println();
-                show(Perjanjianku);
-                System.out.println();
-                break;
-            }
         }
     }
     
@@ -115,6 +106,7 @@ public class DataOperant {
                 "\nDilaksanakan pada tanggal : "+p.getTanggal()+
                 "-"+p.getBulan()+"-"+p.getTahun()
         );
+        System.out.println();
     }
     
 }

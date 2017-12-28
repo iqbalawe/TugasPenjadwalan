@@ -1,40 +1,42 @@
+//Bagian ini Rifki yang Jelasin
+
 package tugaspenjadwalan;
 
 import java.util.Date;
 
 public class Perjanjianku implements Comparable<Perjanjianku>{ //Implementasi Perbandingan Semua Data
-    private int id;
-    private String kegiatan;
-    private int tanggal;
-    private int bulan;
-    private int tahun;
+    private int id; //Deklarasi id
+    private String kegiatan; //Deklarasi Kegiatan
+    private int tanggal; //Deklarasi tanggal
+    private int bulan; //Deklarasi bulan
+    private int tahun; //Deklarasi tahun
     
     public Perjanjianku(int id, String kegiatan, int tanggal, int bulan, int tahun) {
-        this.id = id;
-        this.kegiatan = kegiatan;
-        this.tanggal = tanggal;
-        this.bulan = bulan;
-        this.tahun = tahun;
+        this.id = id; //Implementasi id
+        this.kegiatan = kegiatan; //Implementasi kegiatan
+        this.tanggal = tanggal; //Implementasi tanggal
+        this.bulan = bulan; //Implementasi bulan
+        this.tahun = tahun; //Implementasi tahun
     }
     
-    public int getId() {
-        return id;
+    public int getId() { //Method  untuk mengambil nilai Id
+        return id; //Mengembalikan nilai id
     }
     
-    public String getKegiatan() {
-        return kegiatan;
+    public String getKegiatan() { //Method  untuk mengambil nilai Kegiatan
+        return kegiatan; //Mengembalikan nilai kegiatan
     }
     
-    public int getTanggal() {
-        return tanggal;
+    public int getTanggal() { //Method  untuk mengambil nilai Tanggal
+        return tanggal; //Mengembalikan nilai tanggal
     }
     
-    public int getBulan() {
-        return bulan;
+    public int getBulan() { //Method  untuk mengambil nilai Bulan
+        return bulan; //Mengembalikan nilai bulan
     }
     
-    public int getTahun() {
-        return tahun;
+    public int getTahun() { //Method  untuk mengambil nilai Tahun
+        return tahun; //Mengembalikan nilai tahun
     }
     
     public void display() {

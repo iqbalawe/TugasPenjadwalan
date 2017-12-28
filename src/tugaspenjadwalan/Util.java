@@ -1,20 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//Bagian ini Kuati yang jelasin
+
 package tugaspenjadwalan;
 
 import java.util.Date;
 
-/**
- *
- * @author iqbal
- */
 public class Util { //Utility untuk setting tanggal, bulan, tahun berdasarkan kalender
-    public static boolean dateRanger(Date start, Date end) {
-        Date startTemp = new Date(start.getYear(), start.getMonth(), start.getDay());
-        Date endTemp = new Date(end.getYear(), end.getMonth(), end.getDay());
-        return startTemp.getTime() <= endTemp.getTime();
+    public static boolean dateRanger(Date start, Date end) { //Method untuk membandingkan bulan yang pertama dan bulan yang terakhir
+        Date startTemp = new Date(start.getYear(), start.getMonth(), start.getDay()); //Deklarasi startTemp sebagai bulan yang diinput pertama
+        Date endTemp = new Date(end.getYear(), end.getMonth(), end.getDay()); ////Deklarasi endTemp sebagai bulan yang diinput terakhir
+        return startTemp.getTime() <= endTemp.getTime(); //Pengembalian nilai startTemp dan endTemp
     }
 }
